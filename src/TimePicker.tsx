@@ -627,6 +627,7 @@ class TimePicker extends React.Component<IProps, IState> {
         return (
             <div className={`time-picker ${className ? className : ""}`}>
                 <input
+                    type="time"
                     className={`time-picker__input ${inputClass}`}
                     value={this.state.inputValue}
                     onChange={this.onInputChange}
