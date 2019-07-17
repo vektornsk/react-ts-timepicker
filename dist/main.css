@@ -14,7 +14,11 @@
     -webkit-appearance: none;
     font-family: HelveticaNeue-Regular, Helvetica, Arial, sans-serif;
     background-image: none;
-    border: 1px solid #1980EC; }
+    border: 1px solid #1980EC;
+    -moz-appearance: textfield; }
+    .time-picker__input::-webkit-inner-spin-button, .time-picker__input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
   .time-picker__suggestion-list {
     background: #fff;
     border: 1px solid #ddd;
