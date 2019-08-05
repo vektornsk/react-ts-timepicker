@@ -330,7 +330,7 @@ class TimePicker extends React.Component<IProps, IState> {
                         return str += "12";
                     }
 
-                    return str += hours;
+                    return str += this.prependZero(hours);
                 }
                 case "H":
                     return str += this.prependZero(time.getHours());
