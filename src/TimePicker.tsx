@@ -312,6 +312,7 @@ class TimePicker extends React.Component<IProps, IState> {
      * @return string
      */
     convertSecondsToFormattedString = (timeInt: number): string => {
+        debugger
         const { timeFormat } = this.props;
         const time = this.convertSecondsToDate(timeInt);
 
