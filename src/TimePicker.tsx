@@ -406,16 +406,13 @@ class TimePicker extends React.Component<IProps, IState> {
         if (this.props.allowOnlySuggestions) {
             return this.roundTime(timeInSeconds);
         }
-        console.log(timeInSeconds);
 
+        // костыль, чтобы выбрать 00:00
         if (timeInSeconds === 0) {
             timeInSeconds = 1;
         }
 
-        console.log(timeInSeconds);
-
         return timeInSeconds;
-
     }
 
     /**
