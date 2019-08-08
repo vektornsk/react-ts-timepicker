@@ -349,7 +349,7 @@ class TimePicker extends React.Component<IProps, IState> {
      * @param time
      */
     convertTimeToSeconds = (time: string | Date | null): number | null => {
-        console.log(time)
+
         if (time === "" || time === null) {
             return null;
         }
@@ -406,8 +406,10 @@ class TimePicker extends React.Component<IProps, IState> {
         if (this.props.allowOnlySuggestions) {
             return this.roundTime(timeInSeconds);
         }
+        console.log(timeInSeconds);
 
         return timeInSeconds;
+
     }
 
     /**
