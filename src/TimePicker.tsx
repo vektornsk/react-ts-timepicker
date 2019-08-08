@@ -408,6 +408,12 @@ class TimePicker extends React.Component<IProps, IState> {
         }
         console.log(timeInSeconds);
 
+        if (timeInSeconds === 0) {
+            timeInSeconds = 1;
+        }
+
+        console.log(timeInSeconds);
+
         return timeInSeconds;
 
     }
