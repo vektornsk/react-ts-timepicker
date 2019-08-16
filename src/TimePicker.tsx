@@ -1,3 +1,4 @@
+import {DOMElement} from "react";
 import * as React from "react";
 import { Portal } from "react-portal";
 import "./styles.scss";
@@ -17,6 +18,7 @@ interface IProps {
     hideOnScroll: boolean;
     allowOnlySuggestions: boolean;
     onChange(value: string | Date): void;
+    getInput(value: HTMLElement);
 }
 
 interface IState {
@@ -78,6 +80,7 @@ class TimePicker extends React.Component<IProps, IState> {
 
     componentDidMount() {
         document.addEventListener("keydown", this.onKeyDown);
+        this.props.getInput(this.inputEl);
     }
 
     componentDidUpdate(prevProps: IProps) {
