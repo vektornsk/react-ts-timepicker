@@ -651,6 +651,7 @@ class TimePicker extends React.Component<IProps, IState> {
                         ref={(el) => {
                             this.inputEl = el;
                         }}
+                        aria-label="Label text"
                     />
                 </label>
                 {((showSuggestions && suggestions.length > 0) || this.suggestionsWrapperEl) &&
