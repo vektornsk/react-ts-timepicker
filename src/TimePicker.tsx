@@ -81,7 +81,9 @@ class TimePicker extends React.Component<IProps, IState> {
 
     componentDidMount() {
         document.addEventListener("keydown", this.onKeyDown);
-        this.props.getInput(this.inputEl);
+        if (this.props.hasOwnProperty("getInput") && typeof this.props.getInput === "function") {
+            this.props.getInput(this.inputEl);
+        }
     }
 
     componentDidUpdate(prevProps: IProps) {
