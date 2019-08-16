@@ -81,7 +81,7 @@ class TimePicker extends React.Component<IProps, IState> {
     componentDidMount() {
         document.addEventListener("keydown", this.onKeyDown);
         if (!supportsTime) {
-            new TimePolyfill(this.inputEl);
+            const polyfill = new TimePolyfill(this.inputEl);
         }
     }
 
