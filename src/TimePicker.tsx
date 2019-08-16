@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Portal } from "react-portal";
-import "time-input-polyfill/auto";
 import "./styles.scss";
+import supportsTime from "time-input-polyfill/supportsTime";
+import TimePolyfill from "time-input-polyfill";
 
 interface IProps {
     appendTo: string | null;
@@ -79,6 +80,9 @@ class TimePicker extends React.Component<IProps, IState> {
 
     componentDidMount() {
         document.addEventListener("keydown", this.onKeyDown);
+        if (!supportsTime) {
+            new TimePolyfill(this.inputEl);
+        }
     }
 
     componentDidUpdate(prevProps: IProps) {
