@@ -52,6 +52,7 @@ class TimePicker extends React.Component<IProps, IState> {
     };
 
     inputEl?: HTMLInputElement;
+    labelEl?: HTMLLabelElement;
     wrapperEl?: HTMLDivElement;
     suggestionsWrapperEl?: HTMLDivElement;
     suggestionEl?: HTMLButtonElement;
@@ -80,7 +81,7 @@ class TimePicker extends React.Component<IProps, IState> {
 
     componentDidMount() {
         document.addEventListener("keydown", this.onKeyDown);
-        this.props.getInput(this.inputEl);
+        this.props.getInput(this.labelEl);
     }
 
     componentDidUpdate(prevProps: IProps) {
@@ -634,7 +635,11 @@ class TimePicker extends React.Component<IProps, IState> {
 
         return (
             <div className={`time-picker ${className ? className : ""}`}>
-                <label>
+                <label
+                    ref={(el) => {
+                        this.labelEl = el;
+                    }}
+                >
                     <input
                         type="time"
                         className={`time-picker__input ${inputClass}`}
