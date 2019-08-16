@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Portal } from "react-portal";
-
+import "time-input-polyfill/auto";
 import "./styles.scss";
 
 interface IProps {
@@ -632,20 +632,22 @@ class TimePicker extends React.Component<IProps, IState> {
 
         return (
             <div className={`time-picker ${className ? className : ""}`}>
-		<label>                
-		    <input
-	                type="time"
-	                className={`time-picker__input ${inputClass}`}
-	                value={this.state.inputValue}
-	                onChange={this.onInputChange}
-	                onBlur={this.onInputBlur}
-	                onFocus={this.onInputFocus}
-	                onClick={this.onInputClick}
-	                ref={(el) => { this.inputEl = el; }}
-	            />
-		</label>
+                <label>
+                    <input
+                        type="time"
+                        className={`time-picker__input ${inputClass}`}
+                        value={this.state.inputValue}
+                        onChange={this.onInputChange}
+                        onBlur={this.onInputBlur}
+                        onFocus={this.onInputFocus}
+                        onClick={this.onInputClick}
+                        ref={(el) => {
+                            this.inputEl = el;
+                        }}
+                    />
+                </label>
                 {((showSuggestions && suggestions.length > 0) || this.suggestionsWrapperEl) &&
-                    this.renderSuggestions()
+                this.renderSuggestions()
                 }
             </div>
         );
